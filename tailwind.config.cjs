@@ -3,19 +3,18 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
-      animation: {
-        vote: 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) ',
-
-        keyframes: {
-          vote: '0%',
-          '100%': {
-            opacity: 1,
-          },
-          '50%': {
-            opacity: 0.5,
-          },
-        },
-      },
+      // animation: {
+      //   vote: 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) ',
+      //   keyframes: {
+      //     vote: '0%',
+      //     '100%': {
+      //       opacity: 1,
+      //     },
+      //     '50%': {
+      //       opacity: 0.5,
+      //     },
+      //   },
+      // },
 
       keyframes: {
         'fade-in-down': {
@@ -32,8 +31,7 @@ module.exports = {
       animation: {
         'fade-in-down': 'fade-in-down 0.8s ease-out',
       },
-
-      plugins: [],
     },
   },
+  plugins: [require('daisyui')],
 }

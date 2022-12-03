@@ -19,6 +19,11 @@
     height: 0; */
   }
 }
+
+.radio {
+  --tw-border-opacity: 1;
+  /* @apply rounded-full; */
+}
 /* #hideMeAfter5Seconds {
   animation: s7 1s ease-in 5s;
   animation-fill-mode: forwards;

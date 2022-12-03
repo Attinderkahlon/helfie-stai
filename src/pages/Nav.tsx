@@ -4,18 +4,11 @@ export type NavProps = {
 
 export default function Nav({ toggle }: NavProps) {
   return (
-    <nav className='bg-blue-600 p-6 flex '>
-      <div className='rounded-full bg-blue-800 text-white  text-2xl w-12 h-12 text-center '>
+    <nav className="bg-blue-600 z-10 flex fixed top-0 w-full items-center p-3 gap-2 shadow-md">
+      <div className="rounded-full bg-blue-800 text-white font-bold text-lg w-9 h-9 text-center flex items-center justify-center">
         H
       </div>
-      <p className='text-2xl p-2 text-center text-white'> Helfie Assistant</p>
-      <p className='text-white text-4xl ml-16 text-end'>-</p>
-      <button
-        className='text-white text-xl m-2 ml-4 text-center '
-        onClick={toggle}
-      >
-        X
-      </button>
+      <p className="text-xl text-white whitespace-nowrap">Helfie Assistant</p>
     </nav>
   )
 }

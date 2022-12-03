@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import Modal from './pages/Modal'
 import Nav from './pages/Nav'
 
@@ -13,13 +14,11 @@ const App = () => {
     <>
       <Nav toggle={toggle} />
       {!isOpen ? (
-        <div className='flex flex-col bg-gray-200 justify-center items-center h-screen  '>
-          <div
-            className='absolute inset-x-0 bottom-0 h-16 rounded-t-3xl border-8 border-x-blue-600  border-t-blue-600 container hover:bg-slate-500 text-dark font-bold py-2 px-4 m-2 w-auto'
-            onClick={toggle}
-          >
-            Check Now
-          </div>
+        <div
+          className="fixed font-semibold text-blue-500 bottom-0 h-16 w-full border rounded-t-xl bg-white flex items-center justify-center"
+          onClick={toggle}
+        >
+          <span>Check Now</span>
         </div>
       ) : (
         <Modal />

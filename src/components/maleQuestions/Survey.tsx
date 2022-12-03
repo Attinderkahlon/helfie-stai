@@ -1,28 +1,21 @@
-import { formData } from '../../types/male'
+import { useMaleStore } from '../../store'
+import ChatContainer from '../container/ChatContainer'
+import ChatWrapper from '../container/ChatWrapper'
 
-export type SurveyProps = {
-  formData: formData
-  onChange: (event: any) => void
-  chatbot?: HTMLImageElement
-  incognito?: HTMLImageElement
-}
+export type SurveyProps = {}
 
-export default function Survey({
-  formData,
-  onChange,
-  chatbot,
-  incognito,
-}: SurveyProps) {
+export default function Survey({}: SurveyProps) {
+  const { setMaleData } = useMaleStore()
+
   return (
-    <>
-      <div className='rounded-r-lg bg-slate-300 text-lg text-dark p-4 m-3 w-auto animate-fade-in-down'>
-        <img src={chatbot} alt='chatbot' className='w-6' />
+    <ChatWrapper>
+      <ChatContainer>
         <h2>
           We would like your help with a self-diagnosis website we are
-          developing for the genral public?
+          developing for the general public?
         </h2>
-        <h3>Please complete a 5 minute online questionare:</h3>
-        <ul className='list-disc p-3'>
+        <h3>Please complete a 5 minute online questionnaire:</h3>
+        <ul className="list-disc p-3 [&>li]:ml-2">
           <li>
             Your position in the queue or your waiting time will not be affected
           </li>
@@ -32,40 +25,41 @@ export default function Survey({
           <li>Your responses will not appear in your medical record</li>
           <li>A curtain is provided for your privacy</li>
           <li>
-            Please note you will not get a result from this questionare today
+            Please note you will not get a result from this questionnaire today
           </li>
           <li>For more information please take the "What is it" brochure</li>
         </ul>
-      </div>
-      <div className='flex flex-col items-end my-12'>
-        <div className='rounded-l-lg bg-blue-600 text-lg text-white p-4 m-3  w-3/6 animate-fade-in-down'>
-          <img
-            src={incognito}
-            alt='incognito'
-            className='w-6 bg-blue-300 rounded-full m-1'
-          />
-          <input
-            type='radio'
-            id='male'
-            name='symptoms'
-            value='yes'
-            checked={formData.symptoms === 'yes'}
-            onChange={onChange}
-          />
-          <label htmlFor='yes'>Yes</label>
-          <br></br>
-          <input
-            type='radio'
-            id='female'
-            name='symptoms'
-            value='no'
-            checked={formData.symptoms === 'no'}
-            onChange={onChange}
-          />
-
-          <label htmlFor='no'>No</label>
+      </ChatContainer>
+      <ChatContainer type="answer">
+        <div className="grid gap-3">
+          <div className="flex gap-2 items-center">
+            <input
+              id="no"
+              type="radio"
+              name="survey"
+              className="radio"
+              value={0}
+              onChange={(e) =>
+                setMaleData({ survey: parseInt(e.target.value) })
+              }
+            />
+            <label htmlFor="no">No</label>
+          </div>
+          <div className="flex gap-2 items-center">
+            <input
+              id="yes"
+              type="radio"
+              name="survey"
+              className="radio"
+              value={1}
+              onChange={(e) =>
+                setMaleData({ survey: parseInt(e.target.value) })
+              }
+            />
+            <label htmlFor="yes">Yes</label>
+          </div>
         </div>
-      </div>
-    </>
+      </ChatContainer>
+    </ChatWrapper>
   )
 }
