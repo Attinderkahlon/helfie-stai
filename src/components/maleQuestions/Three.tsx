@@ -17,14 +17,14 @@ export default function Three({}: ThreeProps) {
         <h2>These photos show parts of male genitals</h2>
         <h3>Are you happy to proceed?</h3>
       </ChatContainer>
-      <ChatContainer type="answer">
-        <div className="grid gap-3">
-          <div className="flex gap-2 items-center">
+      <ChatContainer type='answer'>
+        <div className='grid gap-3'>
+          <div className='flex gap-2 items-center'>
             <input
-              id="no"
-              type="radio"
-              name="survey"
-              className="radio"
+              id='no'
+              type='radio'
+              name='surveyPermission'
+              className='radio'
               value={0}
               onChange={(e) =>
                 setMaleData({
@@ -32,14 +32,14 @@ export default function Three({}: ThreeProps) {
                 })
               }
             />
-            <label htmlFor="no">No</label>
+            <label htmlFor='no'>No</label>
           </div>
-          <div className="flex gap-2 items-center">
+          <div className='flex gap-2 items-center'>
             <input
-              id="yes"
-              type="radio"
-              name="survey"
-              className="radio"
+              id='yes'
+              type='radio'
+              name='surveyPermission'
+              className='radio'
               value={1}
               onChange={(e) =>
                 setMaleData({
@@ -47,7 +47,7 @@ export default function Three({}: ThreeProps) {
                 })
               }
             />
-            <label htmlFor="yes">Yes</label>
+            <label htmlFor='yes'>Yes</label>
           </div>
         </div>
       </ChatContainer>

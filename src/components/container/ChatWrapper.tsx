@@ -5,5 +5,5 @@ export type ChatWrapperProps = {
 }
 
 export default function ChatWrapper({ children }: ChatWrapperProps) {
-  return <div className="grid gap-4">{children}</div>
+  return <div className='grid gap-4 mt-12'>{children}</div>
 }

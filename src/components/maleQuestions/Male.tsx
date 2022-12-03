@@ -1,15 +1,14 @@
 import { useState } from 'react'
 
-import { formData } from '../../types/male'
+import { MaleData } from '../../types/male'
 import ChatContainer from '../container/ChatContainer'
+import ChatWrapper from '../container/ChatWrapper'
 
 export type Props = {
-  formData: formData
-  chatbot?: string
-  incognito?: string
+  formData: MaleData
 }
 
-export function Male({ chatbot, incognito }: Props) {
+export function Male({}: Props) {
   const [formData, setFormData] = useState({
     gender: '',
     symptoms: '',
@@ -25,10 +24,10 @@ export function Male({ chatbot, incognito }: Props) {
     })
   }
   return (
-    <>
+    <ChatWrapper>
       <ChatContainer>
         <h2> Do you have any symptoms on any of these locations today?</h2>
-        <ul className="list-disc p-3 [&>li]:ml-2">
+        <ul className='list-disc p-3 [&>li]:ml-2'>
           <li>In your groin</li>
           <li>On your penis</li>
           <li>At the eye of your penis</li>
@@ -36,19 +35,18 @@ export function Male({ chatbot, incognito }: Props) {
           <li>Around your bottom or anus</li>
         </ul>
       </ChatContainer>
-      <ChatContainer type="answer">
+      <ChatContainer type='answer'>
         <input
-          type="radio"
-          id="male"
-          name="symptoms"
-          value="yes"
-          className="radio h-8 w-8 radio-accent"
+          type='radio'
+          id='male'
+          name='symptoms'
+          value='yes'
+          className='radio h-8 w-8 radio-accent'
           checked={formData.symptoms === 'yes'}
           onChange={handleChange}
         />
-        <button className="btn btn-primary">TEST</button>
       </ChatContainer>
-    </>
+    </ChatWrapper>
     // <>
     //   {/* <Loader /> */}
     //   {/* <form className='spinner-7'> </form> */}

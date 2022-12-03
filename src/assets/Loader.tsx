@@ -1,104 +1,79 @@
 import { SVGProps } from 'react'
 
-const Loader = (props: SVGProps<SVGSVGElement>) => (
-  <svg
-    width={135}
-    height={140}
-    xmlns='http://www.w3.org/2000/svg'
-    fill='#fff'
-    {...props}
-  >
-    <rect y={10} width={15} height={120} rx={6}>
-      <animate
-        attributeName='height'
-        begin='0.5s'
-        dur='1s'
-        values='120;110;100;90;80;70;60;50;40;140;120'
-        calcMode='linear'
-        repeatCount='indefinite'
-      />
-      <animate
-        attributeName='y'
-        begin='0.5s'
-        dur='1s'
-        values='10;15;20;25;30;35;40;45;50;0;10'
-        calcMode='linear'
-        repeatCount='indefinite'
-      />
-    </rect>
-    <rect x={30} y={10} width={15} height={120} rx={6}>
-      <animate
-        attributeName='height'
-        begin='0.25s'
-        dur='1s'
-        values='120;110;100;90;80;70;60;50;40;140;120'
-        calcMode='linear'
-        repeatCount='indefinite'
-      />
-      <animate
-        attributeName='y'
-        begin='0.25s'
-        dur='1s'
-        values='10;15;20;25;30;35;40;45;50;0;10'
-        calcMode='linear'
-        repeatCount='indefinite'
-      />
-    </rect>
-    <rect x={60} width={15} height={140} rx={6}>
-      <animate
-        attributeName='height'
-        begin='0s'
-        dur='1s'
-        values='120;110;100;90;80;70;60;50;40;140;120'
-        calcMode='linear'
-        repeatCount='indefinite'
-      />
-      <animate
-        attributeName='y'
-        begin='0s'
-        dur='1s'
-        values='10;15;20;25;30;35;40;45;50;0;10'
-        calcMode='linear'
-        repeatCount='indefinite'
-      />
-    </rect>
-    <rect x={90} y={10} width={15} height={120} rx={6}>
-      <animate
-        attributeName='height'
-        begin='0.25s'
-        dur='1s'
-        values='120;110;100;90;80;70;60;50;40;140;120'
-        calcMode='linear'
-        repeatCount='indefinite'
-      />
-      <animate
-        attributeName='y'
-        begin='0.25s'
-        dur='1s'
-        values='10;15;20;25;30;35;40;45;50;0;10'
-        calcMode='linear'
-        repeatCount='indefinite'
-      />
-    </rect>
-    <rect x={120} y={10} width={15} height={120} rx={6}>
-      <animate
-        attributeName='height'
-        begin='0.5s'
-        dur='1s'
-        values='120;110;100;90;80;70;60;50;40;140;120'
-        calcMode='linear'
-        repeatCount='indefinite'
-      />
-      <animate
-        attributeName='y'
-        begin='0.5s'
-        dur='1s'
-        values='10;15;20;25;30;35;40;45;50;0;10'
-        calcMode='linear'
-        repeatCount='indefinite'
-      />
-    </rect>
-  </svg>
-)
-
+const Loader = (props: SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      width='57'
+      height='57'
+      viewBox='0 0 57 57'
+      xmlns='http://www.w3.org/2000/svg'
+      stroke='#fff'
+    >
+      <g fill='none' fillRule='evenodd'>
+        <g transform='translate(1 1)' strokeWidth='2'>
+          <circle cx='5' cy='50' r='5'>
+            <animate
+              attributeName='cy'
+              begin='0s'
+              dur='2.2s'
+              values='50;5;50;50'
+              calcMode='linear'
+              repeatCount='indefinite'
+            />
+            <animate
+              attributeName='cx'
+              begin='0s'
+              dur='2.2s'
+              values='5;27;49;5'
+              calcMode='linear'
+              repeatCount='indefinite'
+            />
+          </circle>
+          <circle cx='27' cy='5' r='5'>
+            <animate
+              attributeName='cy'
+              begin='0s'
+              dur='2.2s'
+              from='5'
+              to='5'
+              values='5;50;50;5'
+              calcMode='linear'
+              repeatCount='indefinite'
+            />
+            <animate
+              attributeName='cx'
+              begin='0s'
+              dur='2.2s'
+              from='27'
+              to='27'
+              values='27;49;5;27'
+              calcMode='linear'
+              repeatCount='indefinite'
+            />
+          </circle>
+          <circle cx='49' cy='50' r='5'>
+            <animate
+              attributeName='cy'
+              begin='0s'
+              dur='2.2s'
+              values='50;50;5;50'
+              calcMode='linear'
+              repeatCount='indefinite'
+            />
+            <animate
+              attributeName='cx'
+              from='49'
+              to='49'
+              begin='0s'
+              dur='2.2s'
+              values='49;5;27;49'
+              calcMode='linear'
+              repeatCount='indefinite'
+            />
+          </circle>
+        </g>
+      </g>
+    </svg>
+  )
+}
 export default Loader

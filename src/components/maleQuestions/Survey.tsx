@@ -15,7 +15,7 @@ export default function Survey({}: SurveyProps) {
           developing for the general public?
         </h2>
         <h3>Please complete a 5 minute online questionnaire:</h3>
-        <ul className="list-disc p-3 [&>li]:ml-2">
+        <ul className='list-disc p-3 [&>li]:ml-2'>
           <li>
             Your position in the queue or your waiting time will not be affected
           </li>
@@ -30,33 +30,33 @@ export default function Survey({}: SurveyProps) {
           <li>For more information please take the "What is it" brochure</li>
         </ul>
       </ChatContainer>
-      <ChatContainer type="answer">
-        <div className="grid gap-3">
-          <div className="flex gap-2 items-center">
+      <ChatContainer type='answer'>
+        <div className='grid gap-3'>
+          <div className='flex gap-2 items-center'>
             <input
-              id="no"
-              type="radio"
-              name="survey"
-              className="radio"
+              id='no'
+              type='radio'
+              name='survey'
+              className='radio'
               value={0}
               onChange={(e) =>
                 setMaleData({ survey: parseInt(e.target.value) })
               }
             />
-            <label htmlFor="no">No</label>
+            <label htmlFor='no'>No</label>
           </div>
-          <div className="flex gap-2 items-center">
+          <div className='flex gap-2 items-center'>
             <input
-              id="yes"
-              type="radio"
-              name="survey"
-              className="radio"
+              id='yes'
+              type='radio'
+              name='survey'
+              className='radio'
               value={1}
               onChange={(e) =>
                 setMaleData({ survey: parseInt(e.target.value) })
               }
             />
-            <label htmlFor="yes">Yes</label>
+            <label htmlFor='yes'>Yes</label>
           </div>
         </div>
       </ChatContainer>
